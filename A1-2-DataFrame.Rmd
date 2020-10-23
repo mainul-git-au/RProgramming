@@ -1,0 +1,111 @@
+---
+title: "A1-A-ArrayOperations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+
+1. How many rows does the *simplebudget* data have?
+
+2. How many columns?
+
+
+```{r}
+
+# Write your code and your comments here.
+simplebudget = read.csv("simplebudget.csv") 
+rows = nrow(simplebudget)
+rows
+
+columns = ncol(simplebudget)
+columns
+# Any plot you generate will be shown in the document.
+
+```
+
+## Question 2
+
+1. What are the classes of each column?
+
+2. What are the names of each column? 
+
+3. What do we use to see the first few lines ?
+
+
+```{r}
+
+# Write your code and your comments here.
+
+simplebudget = read.csv("simplebudget.csv") 
+
+class(simplebudget$Portfolio)
+class(simplebudget$Department.Agency)
+class(simplebudget$Y2013.14)
+
+names(simplebudget) 
+
+head(simplebudget)
+
+# Any plot you generate will be shown in the document.
+
+```
+
+
+
+## Question 3
+
+1. How many portfolios are represented in the Portfolio column?
+
+2. What are their names?
+
+3. How many rows for each portfolio?
+
+4. What is the total budget for Defence Portfolio?
+
+
+```{r}
+
+# Write your code and your comments here.
+
+simplebudget = read.csv("simplebudget.csv") 
+length(levels(simplebudget$Portfolio))
+levels(simplebudget$Portfolio)
+summary(simplebudget)
+sum(simplebudget$Y2013.14[simplebudget$Portfolio == "Defence Portfolio"])
+
+# Any plot you generate will be shown in the document.
+
+```
+
+## Question 4
+
+What are a few different ways to load data from a text file?
+
+```{r}
+
+# Write your code and your comments here.
+read.csv("simplebudget.csv") 
+
+# Any plot you generate will be shown in the document.
+
+```
+
+## Question 5
+
+Find two interesting datasets that are built into R or an R package and describe their shape and contents (using code).  
+
+```{r}
+
+# Write your code and your comments here.
+names(ChickWeight)
+nrow(ChickWeight)
+str(ChickWeight)
+summary(ChickWeight) 
+head(ChickWeight)
+# Any plot you generate will be shown in the document.
+
+```
